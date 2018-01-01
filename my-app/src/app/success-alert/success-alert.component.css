@@ -1,0 +1,7 @@
+p {
+    color: rgb(6, 110, 207);
+    font-family: "Inconsolata";
+    padding: 20px;
+    background-color: rgba(97, 186, 238, 0.363);
+    border: blue solid 1px;
+}

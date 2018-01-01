@@ -1,0 +1,11 @@
+
+ng new app-name
+ng serve
+
+ng generate component >name< servers // creates a new ng component
+ng g c 
+
+main.ts boostraps app.module, which loads all the ng components, and then 
+sends it to the <app-root> in the index.html and knows what html to open
+
+Using {{ expression }} in html, expression must return a string. Can call a method etc.
