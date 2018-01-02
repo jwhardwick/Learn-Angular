@@ -3,7 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-display-details',
   templateUrl: './display-details.component.html',
-  styleUrls: ['./display-details.component.css']
+  styles: [`
+    .threshold {
+      color: white;
+    }
+  `]
 })
 export class DisplayDetailsComponent implements OnInit {
 
@@ -19,6 +23,10 @@ export class DisplayDetailsComponent implements OnInit {
   logClick() {
     this.clickCount++;
     this.logs.push(this.clickCount);
+  }
+
+  getColor(i) {
+    return i >= 5 ? 'blue' : 'white';
   }
 
   constructor() { }
