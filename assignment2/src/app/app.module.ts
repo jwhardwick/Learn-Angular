@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UsernameInputComponent } from './username-input/username-input.component';
+import { DisplayDetailsComponent } from './display-details/display-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsernameInputComponent
+    UsernameInputComponent,
+    DisplayDetailsComponent
   ],
   imports: [
     BrowserModule,

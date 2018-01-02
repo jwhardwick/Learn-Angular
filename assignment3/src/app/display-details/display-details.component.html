@@ -1,0 +1,16 @@
+<button
+  class="btn btn-primary"
+  (click)="toggleDetails()">
+  Display Details
+</button>
+
+<p *ngIf="displayDetails" >
+  This is a details paragraph!
+</p>
+<p *ngIf="!displayDetails" >
+  <br>
+</p>
+
+<app-log-record *ngFor="let log of logs; let i = index;">
+  <p>text</p>
+</app-log-record>
