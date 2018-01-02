@@ -1,27 +1,29 @@
-<button
-  class="btn btn-primary"
-  (click)="toggleDetails()">
-  Display Details
-</button>
 
-<!-- <p
-  [ngStyle]="{backgroundColor: getColor(clickCount)}"
-  [ngClass]="{overFive: clickCount >= 5}"
-  >
-  {{ clickCount }}
-</p> -->
 
-<p *ngIf="displayDetails" >
-  This is a details paragraph!
-</p>
-<p *ngIf="!displayDetails" >
-  <br>
-</p>
-
-<p 
-  *ngFor="let log of logs; let i = index;"
-  [ngStyle]="{backgroundColor: getColor(i)}"
-  [ngClass]="{threshold: i >= 5}"
-  >
-  {{ i }}
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="toggleDetails()">
+        Display Details
+      </button>
+      
+      
+      <p *ngIf="displayDetails" >
+        This is a details paragraph!
+      </p>
+      <p *ngIf="!displayDetails" >
+        <br>
+      </p>
+      
+      <p 
+        *ngFor="let log of logs; let i = index;"
+        [ngStyle]="{backgroundColor: getColor(i)}"
+        [ngClass]="{threshold: i >= 5}"
+        >
+        {{ i }}
+      </p>
+    </div>
+  </div>
+</div>
