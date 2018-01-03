@@ -22,7 +22,7 @@ export class DisplayDetailsComponent implements OnInit {
 
   logClick() {
     this.clickCount++;
-    this.logs.push(this.clickCount);
+    this.logs.push(new Date());
   }
 
   getColor(i) {
