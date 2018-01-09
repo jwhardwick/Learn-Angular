@@ -33,3 +33,14 @@ Data Structures
 |   Recipe
     >   MetaData 
     >   Duration etc.
+
+
+LIFECYCLE
+    ngOnChanges             called after a bound property changes
+    ngOnInit                called when compononent is initialized
+    ngDoCheck               called during every change detection run (i.e a random event, mouseclick)
+    ngAfterContentInit      called after ng-content has been projected into view
+    ngAfterContentChecked   called every time ng-content has been checked 
+    ngAfterViewInit         called after componenents view (+ childs view) has been initalised
+    ngAfterViewChecked      called every time components view (+ childs view) has been checked
+    ngOnDestroy             called once componenent is about to be destroyed
