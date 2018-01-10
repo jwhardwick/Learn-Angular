@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  showRecipes = true;
+  showShoppingList = false;
+
+  onShowRecipes() {
+    this.showRecipes = true;
+    this.showShoppingList = false;
+  }
+
+  onShowShoppingList() {
+    this.showRecipes = false;
+    this.showShoppingList = true;
+  }
 }

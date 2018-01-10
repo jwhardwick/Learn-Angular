@@ -1,7 +1,17 @@
 <div class="container">
   <div class="row">
-      <app-header></app-header>
+      <app-header 
+        (showRecipesEvent)="onShowRecipes($event)"
+        (showShoppingListEvent)="onShowShoppingList($event)">
+
+      </app-header>
   </div>
-  <app-recipes></app-recipes>
-  <app-shopping-list></app-shopping-list>
+  <app-recipes
+    *ngIf="showRecipes">
+
+  </app-recipes>
+  <app-shopping-list
+    *ngIf="showShoppingList">
+
+  </app-shopping-list>
 </div>
