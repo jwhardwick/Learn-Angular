@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  intervals: number[] = [];
+
+  onIntervalReached(intervalData: {message: string, value: number}) {
+    this.intervals.push(intervalData.value);
+  }
 }
