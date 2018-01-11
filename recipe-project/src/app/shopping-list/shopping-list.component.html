@@ -1,13 +1,16 @@
 <div class="row">
   <div class="col-xs-10">
-    <app-shopping-list-edit></app-shopping-list-edit>
+    <app-shopping-list-edit
+      (ingredientWasAdded)="ingredients.push($event.ingredient)"
+      (ingredientWasDeleted)="ingredients.splice(ingredients.length - 1, ingredients.length)">
+
+    </app-shopping-list-edit>
     <hr>
     <ul class="list-group">
       <a 
         class="list-group-item" 
         style="cursor: pointer;"
-        *ngFor="let ingredient of ingredients"
-      >
+        *ngFor="let ingredient of ingredients">
         {{ ingredient.name }} ({{ ingredient.amount }})
       </a>
     </ul>
