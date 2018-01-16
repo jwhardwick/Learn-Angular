@@ -1,0 +1,13 @@
+<li class="list-group-item">
+  {{ taskItem.task }}
+  <span>
+    <button 
+      class="btn-danger"
+      (click)="deleteTask()">Delete</button>
+    <button 
+      class="btn-success"
+      (click)="toggleCompleteTask()"
+      *ngIf="!taskItem.completed"
+      >Complete</button>
+  </span>
+</li>

@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-xs-12">
+      <app-cockpit
+        (taskWasAdded)="tasks.push($event)">
+
+      </app-cockpit>
+    </div>
+  </div>
+  <hr>
+
+<div class="col-xs-6">
+  <div class="list-group">
+    <app-task
+      *ngFor="let incompleteTask of incompleteTasks()"
+      [taskItem]="incompleteTask"
+      (taskWasDeleted)="onTaskDelete($event)">
+    </app-task>
+  </div>
+
+</div>
+<div class="col-xs-6">
+  <app-task
+    *ngFor="let completeTask of completeTasks()"
+    [taskItem]="completeTask"
+    (taskWasDeleted)="onTaskDelete($event)">
+  </app-task>
+</div>
+
+
