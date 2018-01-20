@@ -21,7 +21,9 @@ export class TasksComponent implements OnInit {
 
   completeTasks() {
     const completedTasks = this.tasks.filter(task => task.completed === true);
-    return completedTasks.sort( (a, b) => new Date(a.dateCompleted).getTime() - new Date(b.dateCompleted).getTime() );
+    return completedTasks.sort( (a, b) =>
+      new Date(a.dateCompleted).getTime() - new Date(b.dateCompleted).getTime()
+    );
   }
 
   onTaskDelete(taskToDelete: ToDo) {
