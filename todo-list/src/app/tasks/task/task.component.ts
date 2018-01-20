@@ -21,8 +21,9 @@ export class TaskComponent implements OnInit {
     this.taskWasDeleted.emit(this.taskItem);
   }
 
-  toggleCompleteTask() {
-    this.taskItem.completed = !this.taskItem.completed;
+  completeTask() {
+    this.taskItem.completed = true;
+    this.taskItem.dateCompleted = new Date();
   }
 
 }
