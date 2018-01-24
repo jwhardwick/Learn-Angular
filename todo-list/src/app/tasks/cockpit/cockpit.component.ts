@@ -9,12 +9,17 @@ import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '
 export class CockpitComponent implements OnInit {
 
   @Output() taskWasAdded = new EventEmitter<ToDo>();
+  @Output() showPageEvent = new EventEmitter<string>();
 
   @ViewChild('taskInput') taskInput: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showPage(pageToShow: string) {
+    this.showPageEvent.emit(pageToShow);
   }
 
   addTaskInput() {

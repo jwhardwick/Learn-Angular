@@ -3,7 +3,12 @@
   <span>
     <button 
       class="btn-danger"
+      *ngIf="!taskItem.completed"
       (click)="deleteTask()">Delete</button>
+    <button 
+      class="btn-warning"
+      *ngIf="taskItem.completed"
+      (click)="archiveTask()">Archive</button>
     <button 
       class="btn-success"
       (click)="completeTask()"

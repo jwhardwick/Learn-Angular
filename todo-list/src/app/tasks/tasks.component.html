@@ -1,14 +1,25 @@
 <div class="row">
     <div class="col-xs-12">
       <app-cockpit
-        (taskWasAdded)="tasks.push($event)">
-
+        (taskWasAdded)="tasks.push($event)"
+        (showPageEvent)="onShowPage($event)">
       </app-cockpit>
     </div>
-  </div>
-  <hr>
+</div>
+<hr>
 
-<div class="col-xs-6">
+<div class="col-xs-6"
+  *ngIf="selectedPage === 'archived'">
+    <div class="list-group">
+      <app-task
+        *ngFor="let archivedTask of archivedTasks"
+        [taskItem]="archivedTask">
+      </app-task>
+    </div>
+</div>
+
+<div class="col-xs-6"
+  *ngIf="selectedPage === 'current'">
   <div class="list-group">
     <app-task
       *ngFor="let incompleteTask of incompleteTasks()"
@@ -16,13 +27,14 @@
       (taskWasDeleted)="onTaskDelete($event)">
     </app-task>
   </div>
-
 </div>
-<div class="col-xs-6">
+
+<div class="col-xs-6"
+  *ngIf="selectedPage === 'current'">
   <app-task
     *ngFor="let completeTask of completeTasks()"
     [taskItem]="completeTask"
-    (taskWasDeleted)="onTaskDelete($event)">
+    (taskWasArchived)="onTaskArchive($event)">
   </app-task>
 </div>
 

@@ -11,6 +11,7 @@ export class TaskComponent implements OnInit {
   @Input() taskItem: ToDo;
 
   @Output() taskWasDeleted = new EventEmitter<ToDo>();
+  @Output() taskWasArchived = new EventEmitter<ToDo>();
 
   constructor() { }
 
@@ -24,6 +25,10 @@ export class TaskComponent implements OnInit {
   completeTask() {
     this.taskItem.completed = true;
     this.taskItem.dateCompleted = new Date();
+  }
+
+  archiveTask() {
+    this.taskWasArchived.emit(this.taskItem);
   }
 
 }
