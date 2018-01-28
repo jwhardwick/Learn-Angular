@@ -9,7 +9,6 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class TaskComponent implements OnInit {
 
   @Input() taskItem: ToDo;
-
   @Output() taskWasDeleted = new EventEmitter<ToDo>();
   @Output() taskWasArchived = new EventEmitter<ToDo>();
 
